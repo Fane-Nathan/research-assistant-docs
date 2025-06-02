@@ -1,30 +1,284 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * StudyAssistant Documentation - Custom Styling
+ * Advanced RAG System for Academic Research
  */
 
-/* You can override the default Infima variables here. */
+/* Custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* StudyAssistant Brand Colors & Variables */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Primary research-focused color scheme */
+  --ifm-color-primary: #1e40af;
+  --ifm-color-primary-dark: #1e3a8a;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+  
+  /* Secondary academic colors */
+  --sa-color-secondary: #7c3aed;
+  --sa-color-accent: #059669;
+  --sa-color-warning: #d97706;
+  --sa-color-research: #0891b2;
+  
+  /* Typography */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  --ifm-code-font-size: 90%;
+  --ifm-font-weight-semibold: 600;
+  --ifm-font-weight-bold: 700;
+  
+  /* Layout enhancements */
+  --ifm-navbar-height: 70px;
+  --ifm-navbar-padding-vertical: 1rem;
+  --ifm-hero-background-color: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%);
+  --ifm-footer-background-color: #0f172a;
+  
+  /* Code highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(30, 64, 175, 0.1);
+  --ifm-code-background: #f8fafc;
+  --ifm-code-border-radius: 6px;
+  
+  /* Shadows and borders */
+  --ifm-box-shadow-lw: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --ifm-box-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ifm-border-radius: 8px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark mode optimizations */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
+  
+  --sa-color-secondary: #a78bfa;
+  --sa-color-accent: #34d399;
+  --sa-color-research: #22d3ee;
+  
+  --docusaurus-highlighted-code-line-bg: rgba(96, 165, 250, 0.2);
+  --ifm-code-background: #1e293b;
+  --ifm-hero-background-color: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+/* Enhanced navbar styling */
+.navbar {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar__brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.navbar__item {
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+}
+
+/* Hero section enhancements */
+.hero {
+  background: var(--ifm-hero-background-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Enhanced buttons */
+.button {
+  border-radius: var(--ifm-border-radius);
+  font-weight: 600;
+  padding: 0.875rem 2rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--ifm-box-shadow-lw);
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ifm-box-shadow-md);
+}
+
+.button--primary {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--sa-color-secondary) 100%);
+  border: none;
+}
+
+.button--secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ifm-color-primary);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.button--secondary:hover {
+  background: rgba(255, 255, 255, 1);
+  color: var(--ifm-color-primary);
+}
+
+/* Feature cards enhancement */
+.features {
+  padding: 4rem 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+[data-theme='dark'] .features {
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+}
+
+/* Code blocks */
+.prism-code {
+  border-radius: var(--ifm-border-radius);
+  box-shadow: var(--ifm-box-shadow-lw);
+}
+
+/* Documentation content */
+.markdown {
+  line-height: 1.7;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+/* Sidebar enhancements */
+.menu__link {
+  border-radius: 6px;
+  margin: 2px 0;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background: rgba(30, 64, 175, 0.1);
+  color: var(--ifm-color-primary);
+}
+
+.menu__link--active {
+  background: var(--ifm-color-primary);
+  color: white;
+  font-weight: 600;
+}
+
+/* Footer styling */
+.footer {
+  background: var(--ifm-footer-background-color);
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(30, 64, 175, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.3) 0%, transparent 50%);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .button {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Badge styling for status indicators */
+.badge {
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.badge--research {
+  background: var(--sa-color-research);
+  color: white;
+}
+
+.badge--ai {
+  background: var(--sa-color-secondary);
+  color: white;
+}
+
+/* Announcement bar if needed */
+.announcement {
+  background: linear-gradient(90deg, var(--ifm-color-primary) 0%, var(--sa-color-secondary) 100%);
+  color: white;
+  font-weight: 500;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Table styling */
+.table {
+  border-radius: var(--ifm-border-radius);
+  overflow: hidden;
+  box-shadow: var(--ifm-box-shadow-lw);
+}
+
+/* Alert styling */
+.alert {
+  border-radius: var(--ifm-border-radius);
+  border-left: 4px solid var(--ifm-color-primary);
 }
