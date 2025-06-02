@@ -18,12 +18,12 @@ const config: Config = {
   url: 'https://fane-nathan.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/StudyAssistant/',
+  baseUrl: '/research-assistant-docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Fane-Nathan', // Your GitHub org/user name.
-  projectName: 'StudyAssistant', // Your repo name.
+  projectName: 'research-assistant-docs', // Your repo name.
 
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
@@ -43,7 +43,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/Fane-Nathan/StudyAssistant/tree/main/docs/',
+          editUrl: 'https://github.com/Fane-Nathan/research-assistant-docs/tree/main/docs/',
         },
         blog: {
           showReadingTime: true,
@@ -52,7 +52,7 @@ const config: Config = {
             xslt: true,
           },
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/Fane-Nathan/StudyAssistant/tree/main/docs/',
+          editUrl: 'https://github.com/Fane-Nathan/research-assistant-docs/tree/main/blog/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -101,7 +101,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/Fane-Nathan/StudyAssistant',
+          href: 'https://github.com/Fane-Nathan/research-assistant-docs',
           label: 'GitHub',
           position: 'right',
         },
@@ -153,7 +153,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/Fane-Nathan/StudyAssistant',
+              href: 'https://github.com/Fane-Nathan/research-assistant-docs',
             },
           ],
         },
